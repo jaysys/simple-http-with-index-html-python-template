@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Plotly.js Sample</title>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+      /* Styling for the plot container */
+      .plotlyChart {
+        width: 100%;
+        height: 400px; /* Initial height */
+        max-width: 800px; /* Max width */
+        margin: 20px auto; /* Center align with margin */
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="plotlyChart1" class="plotlyChart"></div>
+    <div id="plotlyChart2" class="plotlyChart"></div>
+    <div id="plotlyChart3" class="plotlyChart"></div>
+
+    <script>
+      // Generating data for the first chart
+      var xData1 = [];
+      var yData1 = [];
+      for (var i = 0; i <= 10; i++) {
+        xData1.push(i);
+        yData1.push(i * i);
+      }
+
+      // Data for the first chart
+      var data1 = [
+        {
+          x: xData1,
+          y: yData1,
+          type: "scatter", // Line chart
+          name: "Smartspace KDM",
+        },
+      ];
+
+      // Layout options for the first chart
+      var layout1 = {
+        title: {
+          text: "Smartspace KDM",
+          x: 0.05, // Left align the title
+          y: 0.9, // Top align the title
+        },
+        xaxis: {
+          title: "X-axis",
+        },
+        yaxis: {
+          title: "Y-axis",
+        },
+      };
+
+      // Plotting the first chart
+      Plotly.newPlot("plotlyChart1", data1, layout1);
+
+      // Generating data for the second chart
+      var xData2 = [];
+      var yData2 = [];
+      for (var j = 0; j <= 10; j += 0.1) {
+        // Smaller increment for smoother curve
+        xData2.push(j);
+        yData2.push(Math.sin(j));
+      }
+
+      // Data for the second chart
+      var data2 = [
+        {
+          x: xData2,
+          y: yData2,
+          type: "scatter", // Line chart
+          name: "Smartspace KDM",
+        },
+      ];
+
+      // Layout options for the second chart
+      var layout2 = {
+        title: {
+          text: "Smartspace KDM",
+          x: 0.05, // Left align the title
+          y: 0.9, // Top align the title
+        },
+        xaxis: {
+          title: "X-axis",
+        },
+        yaxis: {
+          title: "Y-axis",
+        },
+      };
+
+      // Plotting the second chart
+      Plotly.newPlot("plotlyChart2", data2, layout2);
+
+      // Generating data for the third chart
+      var xData3 = [];
+      var yData3 = [];
+      for (var k = 0; k <= 10; k++) {
+        xData3.push(k);
+        yData3.push(Math.cos(k));
+      }
+
+      // Data for the third chart
+      var data3 = [
+        {
+          x: xData3,
+          y: yData3,
+          type: "scatter", // Line chart
+          name: "Smartspace KDM",
+        },
+      ];
+
+      // Layout options for the third chart
+      var layout3 = {
+        title: {
+          text: "Smartspace KDM",
+          x: 0.05, // Left align the title
+          y: 0.9, // Top align the title
+        },
+        xaxis: {
+          title: "X-axis",
+        },
+        yaxis: {
+          title: "Y-axis",
+        },
+      };
+
+      // Plotting the third chart
+      Plotly.newPlot("plotlyChart3", data3, layout3);
+
+      // Resize function
+      window.onresize = function () {
+        Plotly.Plots.resize("plotlyChart1");
+        Plotly.Plots.resize("plotlyChart2");
+        Plotly.Plots.resize("plotlyChart3");
+      };
+    </script>
+  </body>
+</html>
